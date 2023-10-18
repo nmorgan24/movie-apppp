@@ -4,7 +4,7 @@ import { Link, useLoaderData, Form } from "react-router-dom";
 function Index(props) {
   // GET THE DATA FROM OUR LOADER
   const movie = useLoaderData();
-
+  console.log(movie)
   return (
     <div class="sticky-footer-css">
       <div class="row expanded flex-dir-column">
@@ -25,8 +25,8 @@ function Index(props) {
             <input type="submit" value="Create Person" />
           </Form>
           {movie.map((movies, index) => (
-            <div key={movies._id} className="movie">
-              <Link to={`/${movie._id}`}>
+            <div key={movies._id} className="movies">
+              <Link to={`/${movies._id}`}>
                 <h1>{movies.name}</h1>
               </Link>
               <img src={movies.image} alt={movies.name} />
